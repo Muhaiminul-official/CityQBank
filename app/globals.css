@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    --primary: 0 80% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 10% 96%;
+    --secondary-foreground: 0 70% 40%;
+
+    --muted: 0 10% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 0 80% 96%;
+    --accent-foreground: 0 70% 40%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 10% 90%;
+    --input: 0 10% 90%;
+    --ring: 0 80% 50%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 20% 10%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 20% 15%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 20% 15%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 80% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 20% 20%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 20% 20%;
+    --muted-foreground: 0 10% 70%;
+
+    --accent: 0 20% 20%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 20% 25%;
+    --input: 0 20% 25%;
+    --ring: 0 80% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-poppins), sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom styles for CityUQBank */
+.dark body {
+  @apply bg-red-950;
+}
+
+.dark .bg-sidebar {
+  @apply bg-red-900;
+}
+
+.dark .bg-card {
+  @apply bg-red-900/50;
+}
+
+.dark .border-subtle {
+  @apply border-red-800;
+}
+
+/* Font classes */
+.font-poppins {
+  font-family: var(--font-poppins), sans-serif;
+}
+
+/* Responsive utilities */
+.responsive-container {
+  @apply container mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.responsive-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4;
+}
+
+.responsive-flex {
+  @apply flex flex-col sm:flex-row;
+}
+
+/* Red theme specific styles */
+.red-gradient {
+  @apply bg-gradient-to-r from-red-900 to-red-700;
+}
+
+.red-gradient-light {
+  @apply bg-gradient-to-r from-red-100 to-red-200;
+}
+
+.red-card {
+  @apply bg-white dark:bg-red-900 border border-red-200 dark:border-red-800 rounded-lg shadow-sm;
+}
+
+.red-button {
+  @apply bg-red-600 hover:bg-red-700 text-white transition-colors;
+}
+
+.red-button-outline {
+  @apply border border-red-600 text-red-600 hover:bg-red-50 dark:hover:bg-red-900/50 transition-colors;
+}
+
+.red-link {
+  @apply text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300 transition-colors;
+}
+
+.red-badge {
+  @apply bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200 rounded-full px-2 py-0.5 text-xs font-medium;
+}
+
+.red-input {
+  @apply bg-white dark:bg-red-900/50 border border-red-200 dark:border-red-800 rounded-md focus:ring-red-500 focus:border-red-500;
+}
+
+/* Animation utilities */
+.hover-scale {
+  @apply transition-transform hover:scale-105;
+}
+
+.hover-shadow {
+  @apply transition-shadow hover:shadow-md;
+}
+
+/* Loading spinner */
+.red-spinner {
+  @apply animate-spin rounded-full h-5 w-5 border-2 border-red-200 border-t-red-600;
+}
+
+.red-spinner-lg {
+  @apply animate-spin rounded-full h-10 w-10 border-4 border-red-200 border-t-red-600;
+}
