@@ -1,5 +1,5 @@
 "use client"
-
+import * as pdfjsLib from 'pdfjs-dist';
 import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import {
@@ -25,7 +25,7 @@ import dynamic from "next/dynamic"
 
 // We'll use a dynamic import for the PDF.js worker
 // In a real app, you would need to set up the PDF.js worker properly
-const PDFJSWorker = dynamic(() => import("pdfjs-dist/build/pdf.worker.entry"), { ssr: false })
+// const PDFJSWorker = dynamic(() => import("pdfjs-dist/build/pdf.worker.entry"), { ssr: false })
 
 interface PDFViewerProps {
   pdfUrl: string
